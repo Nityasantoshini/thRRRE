@@ -1,0 +1,20 @@
+<div class = container>
+    <div class = "row">
+        <div *ngFor = "let product of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6" style="text-align: center;">
+            <div class="card" >
+                <img class="card-img" src="assets\images\{{product.imagePath}}"/>
+                <div class = "card-bdy">
+                    <h3 class = "card-title">{{product.id}}.{{product.name}}</h3>
+                    <p class="card-text">{{product.brief}}</p>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Email:{{product.email}}</li>
+                        <li class="list-group-item">Phone:{{product.phone}}</li>
+                        <li class="list-group-item">Address:{{product.Address}}</li>
+                      </ul>
+                    <a href={{product.website}} class="btn btn-primary">checkout more details</a>
+                
+            </div>
+        </div>
+    </div>
+</div>

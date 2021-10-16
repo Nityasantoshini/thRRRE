@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+</head>
+<style>
+    .center {
+        text-align: center;
+    }
+    .form {
+    display: inline-block;
+    padding-top: 15%;
+    }
+
+</style>
+
+<div style = "width:50%; height:50%;padding-left: 5%;padding-top:5% ;float:left"><img src = "../../assets/images/earth.jpg"> </div>
+<div class = "container" style = "width:50%; height:50%;float:right; padding-top:10%">
+    
+    <form class = "col-sm-2 col-form-label" #loginForm ="ngForm" (ngSubmit) = "submitForm(loginForm.value)" novalidate>
+        <h1><i style = color:seagreen>RE</i>duce <i style = color:seagreen>RE</i>use <i style = color:seagreen>RE</i>cycle</h1>
+        <div class = "input-group">
+        <span class = input-group-addon><i class ="glyphicon glyphicon-user"></i></span><input type = "text" #loginId= ngModel name = "loginId" ngModel required minlength = "2" maxlength = "20">
+        </div>
+    
+        <div class = "input-group">
+        <span class = "input-group-addon"><i class ="glyphicon glyphicon-lock"></i></span><input type = "password" #password = ngModel name = "password" ngModel required minlength = "2" maxlength = "20">
+        </div>
+    
+        <button class="btn btn-success" [disabled] = "!loginForm.valid">Login</button>
+    </form>
+    
+</div>
+<div style = "width:50%; height:50%;float:right ;padding-left:3%" >
+    <div *ngIf="loginId.errors?.required && loginId.touched">Please enter data in login id</div>
+    <div *ngIf="password.errors?.required && password.touched">Please enter data in password</div>
+    <div *ngIf="loginId.errors?.minlength && loginId.touched">minimum 2 characters are required</div>
+    <div *ngIf="password.errors?.minlength && password.touched">minimum 2 characters are required</div>
+</div>
+

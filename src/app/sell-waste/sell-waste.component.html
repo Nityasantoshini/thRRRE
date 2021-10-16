@@ -1,0 +1,20 @@
+<div class = container>
+    <div class = "row">
+        <div *ngFor = "let product of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6" style="text-align: center;">
+            <div class="card" >
+                <img class="card-img" src="assets\images\{{product.imagePath}}"/>
+                <div class = "card-bdy">
+                    <h3 class = "card-title">{{product.id}}.{{product.name}}</h3>
+                    <p class="card-text">{{product.brief}}</p>
+                    <p class="card-text"><i>In return you can get: </i>{{product.return}}</p>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Contact:{{product.contact}}</li>
+                        <li class="list-group-item">Buyer:{{product.buyerinfo}}</li>
+                      </ul>
+                    <a href={{product.website}} class="btn btn-primary">checkout more details</a>
+                    <a href={{product.form}} class="btn btn-primary">Fill this form</a>
+            </div>
+        </div>
+    </div>
+</div>

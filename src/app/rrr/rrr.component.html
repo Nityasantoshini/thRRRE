@@ -1,0 +1,18 @@
+<div style= "text-align:center; color:seagreen;padding-top:2%; padding-bottom: 3%" ><h1>ReduceReuseRecycle</h1></div> 
+<div class = container>
+    <div class = "row">
+        <div *ngFor = "let product of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6" style="text-align: center;">
+            <div class="card" >
+                <img class="card-img" src="assets\images\{{product.imagePath}}"/>
+                <div class = "card-bdy">
+                    <p class="card-text">{{product.caption}}</p>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <a href={{product.video}} class="btn btn-primary">Know More</a>
+                    </ul>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
